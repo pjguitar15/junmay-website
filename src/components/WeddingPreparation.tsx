@@ -20,7 +20,10 @@ const accessoryItems = [
 
 const WeddingPreparation = () => {
   return (
-    <section className='container mx-auto px-4 py-16 bg-pink-50 text-center'>
+    <section
+      className='container mx-auto px-4 py-16 bg-pink-50 text-center'
+      id='essential-items'
+    >
       <motion.p
         className='text-pink-600 text-lg mb-2 font-lato'
         initial={{ opacity: 0, y: -20 }}

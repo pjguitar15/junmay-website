@@ -91,7 +91,10 @@ const TeamSection = () => {
   );
 
   return (
-    <section className='py-24'>
+    <section
+      className='py-24'
+      id='bridesmaid-&-groomsmen'
+    >
       <div className='text-center mb-8'>
         <h2 className='text-5xl font-bold font-alex-brush'>
           Bridesmaids & Groomsmen

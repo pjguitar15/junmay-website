@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <footer className='bg-pink-100 shadow-inner'>
-      <div className='container mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-center'>
+      <div className='container mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-2 items-center justify-between'>
         {/* Logo and Copyright */}
         <motion.div
           className='text-pink-800 font-alex-brush md:col-span-1 text-center md:text-left'
@@ -29,7 +29,7 @@ const Footer = () => {
 
         {/* Footer Navigation Links */}
         <motion.ul
-          className='flex flex-col md:flex-row md:space-x-8 text-pink-600 font-lato mt-6 md:mt-0 text-center md:text-left'
+          className='flex flex-col lg:flex-row xl:gap-9 justify-end text-pink-600 font-lato mt-6 md:mt-0 text-center md:text-right'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -48,7 +48,7 @@ const Footer = () => {
               className='text-center'
             >
               <a
-                href={item.link}
+                href={`#${item.name.split(" ").join("-").toLowerCase()}`}
                 className='hover:text-pink-800 transition duration-300 ease-in-out'
               >
                 {item.name}
@@ -58,7 +58,7 @@ const Footer = () => {
         </motion.ul>
 
         {/* Footer Legal Links */}
-        <motion.ul
+        {/* <motion.ul
           className='flex flex-col md:space-x-6 text-pink-600 font-lato mt-6 md:mt-0 text-center md:text-right'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,7 +82,7 @@ const Footer = () => {
               </a>
             </motion.li>
           ))}
-        </motion.ul>
+        </motion.ul> */}
       </div>
     </footer>
   );

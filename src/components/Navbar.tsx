@@ -45,7 +45,7 @@ const Navbar = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <a
-                href='#'
+                href={`#${item.split(" ").join("-").toLowerCase()}`}
                 className='hover:text-pink-800'
               >
                 {item}

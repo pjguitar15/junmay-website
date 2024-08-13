@@ -1,6 +1,9 @@
 const AboutUs = () => {
   return (
-    <div className='bg-white p-8'>
+    <div
+      className='bg-white p-8'
+      id='about'
+    >
       <div className='container mx-auto'>
         <div className='flex flex-col md:flex-row items-center'>
           <div className='md:w-1/2 p-12'>
