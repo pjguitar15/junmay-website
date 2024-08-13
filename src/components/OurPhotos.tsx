@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useNavigate } from "react-router-dom";
 
 const photoItems = [
   {
@@ -31,6 +32,7 @@ const photoItems = [
 ];
 
 const OurPhotos = () => {
+  const navigate = useNavigate();
   const controls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: true, // Animation triggers only once
@@ -105,12 +107,12 @@ const OurPhotos = () => {
                 {item.title}
               </h3>
               <p className='text-gray-600 mb-4'>{item.description}</p>
-              <a
-                href='#'
+              <button
+                onClick={() => navigate(`/gallery/${item.title.toLowerCase()}`)}
                 className='text-pink-600 hover:text-pink-800 font-semibold'
               >
                 View Gallery
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>
