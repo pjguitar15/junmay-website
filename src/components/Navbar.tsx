@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -8,9 +8,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  useEffect(() => {
+    console.log(isOpen);
+  }, [isOpen]);
 
   return (
-    <nav className='bg-white shadow-lg relative'>
+    <nav className='bg-white shadow-lg'>
       <div className='container mx-auto px-4 py-4 flex justify-between items-center relative'>
         {/* Logo */}
         <Link to='/'>
@@ -33,12 +36,10 @@ const Navbar = () => {
 
         {/* Burger Menu Icon */}
         <div
-          className={`lg:hidden ${isOpen && "hidden"} flex items-center z-50`}
+          onClick={toggleMenu}
+          className={`flex items-center lg:hidden z-50`}
         >
-          <RxHamburgerMenu
-            className='text-pink-800 text-3xl cursor-pointer'
-            onClick={toggleMenu}
-          />
+          <RxHamburgerMenu className='text-pink-800 text-3xl cursor-pointer' />
         </div>
 
         {/* Navigation Links */}
@@ -61,7 +62,7 @@ const Navbar = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <a
-                href={`#${item.split(" ").join("-").toLowerCase()}`}
+                href={`/#${item.split(" ").join("-").toLowerCase()}`}
                 className='hover:text-pink-800'
               >
                 {item}
@@ -72,9 +73,9 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <motion.div
-          className={`fixed top-0 right-0 w-3/4 md:w-1/2 bg-white shadow-lg transition-transform ease-in-out duration-300 ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          } h-full`}
+          className={`fixed top-0 right-0 bg-white w-2/4 md:w-1/2 shadow-lg h-full transition-transform ease-in-out duration-300 ${
+            isOpen ? "translate-x-0 z-50" : "translate-x-full -z-20"
+          }`}
           initial={{ opacity: 0, x: 300 }}
           animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : 300 }}
           transition={{ duration: 0.3 }}
@@ -102,7 +103,7 @@ const Navbar = () => {
                 key={index}
                 whileHover={{ scale: 1.1, color: "#DB2777" }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className='border-b last:border-b-0'
+                className='border-b last:border-b-0 text-black'
               >
                 <a
                   href={`#${item.split(" ").join("-").toLowerCase()}`}

@@ -9,12 +9,12 @@ const Footer = () => {
       <div className='container mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-2 items-center justify-between'>
         {/* Logo and Copyright */}
         <motion.div
-          className='text-pink-800 font-alex-brush md:col-span-1 text-center md:text-left'
+          className='text-pink-800 font-alex-brush md:col-span-1 text-center lg:text-left'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className='flex gap-3 items-center justify-center md:justify-start'>
+          <div className='flex gap-3 items-center justify-center lg:justify-start'>
             <img
               className='w-9'
               src={ringLogo}
@@ -38,7 +38,7 @@ const Footer = () => {
             { name: "Home", link: "#" },
             { name: "Collection", link: "#" },
             { name: "About", link: "#" },
-            { name: "Our Team", link: "#" },
+            { name: "Bridesmaid & Groomsmen", link: "#" },
             { name: "Essential Items", link: "#" },
           ].map((item, index) => (
             <motion.li
