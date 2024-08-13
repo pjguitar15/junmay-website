@@ -1,11 +1,17 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import ringLogo from "../assets/wedding-ring.svg";
 import { Link } from "react-router-dom";
+import { RxHamburgerMenu } from "react-icons/rx";
+import ringLogo from "../assets/wedding-ring.svg";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
-    <nav className='bg-white shadow-lg'>
-      <div className='container mx-auto px-4 py-4 flex justify-between items-center'>
+    <nav className='bg-white shadow-lg relative'>
+      <div className='container mx-auto px-4 py-4 flex justify-between items-center relative'>
         {/* Logo */}
         <Link to='/'>
           <motion.div
@@ -25,9 +31,19 @@ const Navbar = () => {
           </motion.div>
         </Link>
 
+        {/* Burger Menu Icon */}
+        <div
+          className={`lg:hidden ${isOpen && "hidden"} flex items-center z-50`}
+        >
+          <RxHamburgerMenu
+            className='text-pink-800 text-3xl cursor-pointer'
+            onClick={toggleMenu}
+          />
+        </div>
+
         {/* Navigation Links */}
         <motion.ul
-          className='flex space-x-8 text-pink-600 font-lato'
+          className='hidden lg:flex gap-8 text-pink-600 font-lato'
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -53,6 +69,52 @@ const Navbar = () => {
             </motion.li>
           ))}
         </motion.ul>
+
+        {/* Mobile Menu */}
+        <motion.div
+          className={`fixed top-0 right-0 w-3/4 md:w-1/2 bg-white shadow-lg transition-transform ease-in-out duration-300 ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          } h-full`}
+          initial={{ opacity: 0, x: 300 }}
+          animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : 300 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className='flex justify-end p-4'>
+            <RxHamburgerMenu
+              className='text-pink-800 text-3xl cursor-pointer'
+              onClick={toggleMenu}
+            />
+          </div>
+          <motion.ul
+            className='flex flex-col text-pink-600 font-lato'
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            {[
+              "Home",
+              "Photo Collection",
+              "About",
+              "Bridesmaid & Groomsmen",
+              "Essential Items",
+            ].map((item, index) => (
+              <motion.li
+                key={index}
+                whileHover={{ scale: 1.1, color: "#DB2777" }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className='border-b last:border-b-0'
+              >
+                <a
+                  href={`#${item.split(" ").join("-").toLowerCase()}`}
+                  className='block px-4 py-2'
+                  onClick={() => setIsOpen(false)} // Close menu on item click
+                >
+                  {item}
+                </a>
+              </motion.li>
+            ))}
+          </motion.ul>
+        </motion.div>
       </div>
     </nav>
   );

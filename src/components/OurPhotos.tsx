@@ -36,7 +36,7 @@ const OurPhotos = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: true, // Animation triggers only once
-    threshold: 1.0, // Trigger when 100% of the component is in view
+    threshold: 0.5, // Trigger when 50% of the component is in view
   });
 
   useEffect(() => {
@@ -86,11 +86,11 @@ const OurPhotos = () => {
         >
           Explore Our Captured Moments
         </motion.h2>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 font-lato'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 font-lato'>
           {photoItems.map((item, index) => (
             <motion.div
               key={index}
-              className='photo-item'
+              className='photo-item rounded-lg p-4'
               initial={{ opacity: 0, y: 30 }}
               animate={controls}
               variants={{
@@ -101,7 +101,7 @@ const OurPhotos = () => {
               <img
                 src={item.imgUrl}
                 alt={item.title}
-                className='mx-auto mb-4 rounded-lg shadow-lg'
+                className='mx-auto mb-4 rounded-lg'
               />
               <h3 className='text-xl font-bold text-gray-800 mb-2'>
                 {item.title}
