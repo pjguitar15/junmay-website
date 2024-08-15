@@ -8,6 +8,9 @@ import TeamSection from "./components/TeamMembers";
 import AboutUs from "./components/AboutUs";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
+import VideoSection from "./components/VideoSection";
+import PrenupSlideshow from "./components/PrenupSlideshow";
+import FamilySection from "./components/FamilySection";
 
 const App: React.FC = () => {
   return (
@@ -20,8 +23,11 @@ const App: React.FC = () => {
             element={
               <>
                 <LandingPage />
-                <OurPhotos />
                 <AboutUs />
+                <OurPhotos />
+                <VideoSection />
+                <PrenupSlideshow />
+                <FamilySection />
                 <TeamSection />
                 <WeddingPreparation />
               </>

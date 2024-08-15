@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll"; // Import Link from react-scroll
 import { RxHamburgerMenu } from "react-icons/rx";
 import ringLogo from "../assets/wedding-ring.svg";
 
@@ -8,15 +8,22 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
   useEffect(() => {
     console.log(isOpen);
   }, [isOpen]);
 
   return (
-    <nav className='bg-white shadow-lg'>
+    <nav className='bg-white shadow-lg sticky top-0 z-50'>
       <div className='container mx-auto px-4 py-4 flex justify-between items-center relative'>
         {/* Logo */}
-        <Link to='/'>
+        <Link
+          to='home'
+          smooth={true}
+          duration={500}
+          offset={-80} // Adjust this value based on your navbar height
+          className='cursor-pointer'
+        >
           <motion.div
             className='text-2xl font-bold text-pink-800'
             initial={{ opacity: 0, y: -20 }}
@@ -37,9 +44,9 @@ const Navbar = () => {
         {/* Burger Menu Icon */}
         <div
           onClick={toggleMenu}
-          className={`flex items-center lg:hidden z-50`}
+          className={`flex items-center lg:hidden z-50 cursor-pointer`}
         >
-          <RxHamburgerMenu className='text-pink-800 text-3xl cursor-pointer' />
+          <RxHamburgerMenu className='text-pink-800 text-3xl' />
         </div>
 
         {/* Navigation Links */}
@@ -60,13 +67,17 @@ const Navbar = () => {
               key={index}
               whileHover={{ scale: 1.1, color: "#DB2777" }} // scale on hover with pink color
               transition={{ type: "spring", stiffness: 300 }}
+              className='cursor-pointer'
             >
-              <a
-                href={`/#${item.split(" ").join("-").toLowerCase()}`}
+              <Link
+                to={item.split(" ").join("-").toLowerCase()}
+                smooth={true}
+                duration={500}
+                offset={-80} // Adjust based on your navbar height
                 className='hover:text-pink-800'
               >
                 {item}
-              </a>
+              </Link>
             </motion.li>
           ))}
         </motion.ul>
@@ -103,15 +114,18 @@ const Navbar = () => {
                 key={index}
                 whileHover={{ scale: 1.1, color: "#DB2777" }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className='border-b last:border-b-0 text-black'
+                className='border-b last:border-b-0 text-black cursor-pointer'
               >
-                <a
-                  href={`#${item.split(" ").join("-").toLowerCase()}`}
+                <Link
+                  to={item.split(" ").join("-").toLowerCase()}
+                  smooth={true}
+                  duration={500}
+                  offset={-80} // Adjust based on your navbar height
                   className='block px-4 py-2'
                   onClick={() => setIsOpen(false)} // Close menu on item click
                 >
                   {item}
-                </a>
+                </Link>
               </motion.li>
             ))}
           </motion.ul>

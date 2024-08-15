@@ -35,11 +35,11 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           {[
-            { name: "Home", link: "#" },
-            { name: "Collection", link: "#" },
+            { name: "Home" },
+            { name: "Photo Collection" },
             { name: "About", link: "#" },
-            { name: "Bridesmaid & Groomsmen", link: "#" },
-            { name: "Essential Items", link: "#" },
+            { name: "Bridesmaid & Groomsmen" },
+            { name: "Essential Items" },
           ].map((item, index) => (
             <motion.li
               key={index}

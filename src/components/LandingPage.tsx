@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import MayFlowers from "../assets/may-flowers.webp";
 import CoupleStare from "../assets/couple-stare.webp";
+import { Link } from "react-scroll";
 
 const LandingPage = () => {
   return (
@@ -62,16 +63,23 @@ const LandingPage = () => {
           day unforgettable. Each photo is a piece of our story, a memory to
           cherish forever.
         </motion.p>
-        <motion.button
-          className='bg-pink-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-pink-700 font-lato'
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.6 }}
+        <Link
+          to='video-section'
+          smooth={true}
+          duration={500}
+          offset={-80} // Adjust based on your navbar height
         >
-          Our Journey
-        </motion.button>
+          <motion.button
+            className='bg-pink-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-pink-700 font-lato'
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.6 }}
+          >
+            Watch Our Wedding Video
+          </motion.button>
+        </Link>
       </motion.div>
 
       <motion.div
