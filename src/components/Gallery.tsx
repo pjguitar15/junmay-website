@@ -1,8 +1,13 @@
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import Modal from "./Modal"; // Import the Modal component
 
 const Gallery: React.FC = () => {
   const { category } = useParams<{ category: string }>();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   // Mock image data for different categories
   const galleries: { [key: string]: string[] } = {
@@ -22,9 +27,20 @@ const Gallery: React.FC = () => {
       "/images/reception3.jpg",
     ],
     portraits: [
-      "/images/reception1.jpg",
-      "/images/reception2.jpg",
-      "/images/reception3.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793624/mayjune/portraits/_ACP6065_vco4ne.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793623/mayjune/portraits/MRV00160_pqvzqx.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793623/mayjune/portraits/_ACP6091_kozafe.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793623/mayjune/portraits/MRV00193_hkod5a.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793623/mayjune/portraits/MRV00254_ii3ory.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793623/mayjune/portraits/MRV00208_b1tbzj.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793623/mayjune/portraits/MRV00181_vly2tz.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793622/mayjune/portraits/MRV00212_r8xiiu.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793622/mayjune/portraits/MRV00260_ovp3js.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793621/mayjune/portraits/MRV00981_e5odu0.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793622/mayjune/portraits/MRV00289_wp00po.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793621/mayjune/portraits/MRV00269_r17lp8.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723793621/mayjune/portraits/MRV00940_uehn5o.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/v1723517838/mayjune/portraits/_ACP6199_lvmtzf.jpg",
     ],
     prenup: [
       "/images/reception1.jpg",
@@ -34,6 +50,38 @@ const Gallery: React.FC = () => {
   };
 
   const galleryImages = galleries[category || ""] || [];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [category]);
+
+  const handleImageClick = (src: string, index: number) => {
+    setSelectedImage(src);
+    setCurrentIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
+    setSelectedImage(galleryImages[(currentIndex + 1) % galleryImages.length]);
+  };
+
+  const handlePrevious = () => {
+    setCurrentIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + galleryImages.length) % galleryImages.length
+    );
+    setSelectedImage(
+      galleryImages[
+        (currentIndex - 1 + galleryImages.length) % galleryImages.length
+      ]
+    );
+  };
 
   return (
     <div className='bg-white py-8'>
@@ -52,7 +100,8 @@ const Gallery: React.FC = () => {
                   scale: 1.05,
                   boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
                 }}
-                className='relative overflow-hidden rounded-lg shadow-md'
+                className='relative overflow-hidden rounded-lg shadow-md cursor-pointer'
+                onClick={() => handleImageClick(src, index)}
               >
                 <img
                   src={src}
@@ -73,6 +122,13 @@ const Gallery: React.FC = () => {
           )}
         </div>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        imageSrc={selectedImage || ""}
+        onClose={closeModal}
+        onNext={handleNext}
+        onPrevious={handlePrevious}
+      />
     </div>
   );
 };

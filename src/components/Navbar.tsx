@@ -1,31 +1,46 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-scroll"; // Import Link from react-scroll
+import { Link as ScrollLink } from "react-scroll";
 import { RxHamburgerMenu } from "react-icons/rx";
 import ringLogo from "../assets/wedding-ring.svg";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  useEffect(() => {
-    console.log(isOpen);
-  }, [isOpen]);
+  const handleLinkClick = (item: string) => {
+    if (item === "Home") {
+      navigate("/");
+    } else {
+      // Scroll to the home section first
+      navigate("/");
+      // Wait for navigation to complete
+      setTimeout(() => {
+        document
+          .querySelector(`#${item.split(" ").join("-").toLowerCase()}`)
+          ?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+    setIsOpen(false); // Close the menu on link click
+  };
 
   return (
     <nav className='bg-white shadow-lg sticky top-0 z-50'>
       <div className='container mx-auto px-4 py-4 flex justify-between items-center relative'>
         {/* Logo */}
-        <Link
+        <ScrollLink
           to='home'
           smooth={true}
           duration={500}
-          offset={-80} // Adjust this value based on your navbar height
-          className='cursor-pointer'
+          offset={-80} // Adjust based on your navbar height
+          className='hover:text-pink-800'
         >
           <motion.div
-            className='text-2xl font-bold text-pink-800'
+            onClick={() => navigate("/")}
+            className='text-2xl font-bold text-pink-800 cursor-pointer'
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -39,7 +54,7 @@ const Navbar = () => {
               Mayrried in June
             </div>
           </motion.div>
-        </Link>
+        </ScrollLink>
 
         {/* Burger Menu Icon */}
         <div
@@ -69,15 +84,16 @@ const Navbar = () => {
               transition={{ type: "spring", stiffness: 300 }}
               className='cursor-pointer'
             >
-              <Link
+              <ScrollLink
                 to={item.split(" ").join("-").toLowerCase()}
                 smooth={true}
                 duration={500}
                 offset={-80} // Adjust based on your navbar height
                 className='hover:text-pink-800'
+                onClick={() => handleLinkClick(item)}
               >
                 {item}
-              </Link>
+              </ScrollLink>
             </motion.li>
           ))}
         </motion.ul>
@@ -85,7 +101,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <motion.div
           className={`fixed top-0 right-0 bg-white w-2/4 md:w-1/2 shadow-lg h-full transition-transform ease-in-out duration-300 ${
-            isOpen ? "translate-x-0 z-50" : "translate-x-full -z-20"
+            isOpen ? "translate-x-0 z-50" : "translate-x-full -z-20 hidden"
           }`}
           initial={{ opacity: 0, x: 300 }}
           animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : 300 }}
@@ -116,16 +132,16 @@ const Navbar = () => {
                 transition={{ type: "spring", stiffness: 300 }}
                 className='border-b last:border-b-0 text-black cursor-pointer'
               >
-                <Link
+                <ScrollLink
                   to={item.split(" ").join("-").toLowerCase()}
                   smooth={true}
                   duration={500}
                   offset={-80} // Adjust based on your navbar height
                   className='block px-4 py-2'
-                  onClick={() => setIsOpen(false)} // Close menu on item click
+                  onClick={() => handleLinkClick(item)} // Close menu on item click
                 >
                   {item}
-                </Link>
+                </ScrollLink>
               </motion.li>
             ))}
           </motion.ul>

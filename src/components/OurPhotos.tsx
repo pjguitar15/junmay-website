@@ -49,7 +49,7 @@ const OurPhotos = () => {
     <section
       ref={ref}
       id='photo-collection'
-      className='px-4 py-16 bg-white text-center'
+      className='px-4 py-16 bg-pink-50 text-center'
     >
       <div className='container mx-auto'>
         <motion.p

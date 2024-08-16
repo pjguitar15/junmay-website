@@ -5,7 +5,10 @@ import { Link } from "react-scroll";
 
 const LandingPage = () => {
   return (
-    <section className='container mx-auto px-4 py-16 flex flex-col md:flex-row gap-9 justify-between items-center'>
+    <section
+      className='container mx-auto px-4 py-16 flex flex-col md:flex-row gap-9 justify-between items-center'
+      id='home'
+    >
       <motion.div
         className='w-full md:w-5/12 mb-8 md:mb-0'
         initial={{ opacity: 0, x: -100 }}
