@@ -25,7 +25,7 @@ const FamilySection: React.FC = () => {
   return (
     <section className='bg-gray-100 py-8'>
       <div className='container mx-auto px-4 flex flex-col md:flex-row items-center'>
-        <div className='md:w-1/2 mb-8 md:mb-0 lg:pe-12'>
+        <div className='w-full md:w-1/2 mb-8 md:mb-0 md:pe-12'>
           <h2 className='text-3xl font-alex-brush text-pink-800 text-center md:text-left mb-4'>
             Family Memories
           </h2>
@@ -35,7 +35,7 @@ const FamilySection: React.FC = () => {
             experience when we are with the ones we love the most.
           </p>
         </div>
-        <div className='md:w-1/2 relative overflow-hidden rounded-lg shadow-md'>
+        <div className='w-full md:w-1/2 relative overflow-hidden rounded-lg shadow-md'>
           <Slide
             autoplay={true}
             pauseOnHover={true}
@@ -60,7 +60,7 @@ const FamilySection: React.FC = () => {
                     <img
                       src={src}
                       alt={`Family ${index * 2 + idx + 1}`}
-                      className='w-full h-80 md:h-96 object-cover rounded-lg'
+                      className='w-full h-60 md:h-96 object-cover rounded-lg'
                     />
                   </div>
                 ))}
