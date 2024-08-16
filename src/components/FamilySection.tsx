@@ -1,15 +1,11 @@
 import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css"; // Import slideshow styles
+import { FAMILY_IMAGES } from "../images/ImageUrls";
 
 const FamilySection: React.FC = () => {
   // Array of family photo URLs
-  const familyPhotos = [
-    "https://images.unsplash.com/photo-1723279230514-c2d1401f794d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1720048170996-40507a45c720?q=80&w=2026&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1723130028854-1b97ca970bf6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    // Add more photos as needed
-  ];
+  const familyPhotos = FAMILY_IMAGES;
 
   // Helper function to group photos into pairs or single images based on screen size
   const groupPhotos = (photos: string[]) => {
@@ -28,11 +24,18 @@ const FamilySection: React.FC = () => {
 
   return (
     <section className='bg-gray-100 py-8'>
-      <div className='container mx-auto px-4'>
-        <h2 className='text-3xl font-alex-brush text-pink-800 text-center mb-8'>
-          Family Memories
-        </h2>
-        <div className='relative overflow-hidden rounded-lg shadow-md'>
+      <div className='container mx-auto px-4 flex flex-col md:flex-row items-center'>
+        <div className='md:w-1/2 mb-8 md:mb-0 lg:pe-12'>
+          <h2 className='text-3xl font-alex-brush text-pink-800 text-center md:text-left mb-4'>
+            Family Memories
+          </h2>
+          <p className='text-gray-700 text-center md:text-left'>
+            Cherish the moments with our family, capturing the love and
+            togetherness we share. These photos are a testament to the joy we
+            experience when we are with the ones we love the most.
+          </p>
+        </div>
+        <div className='md:w-1/2 relative overflow-hidden rounded-lg shadow-md'>
           <Slide
             autoplay={true}
             pauseOnHover={true}
@@ -42,7 +45,9 @@ const FamilySection: React.FC = () => {
           >
             {photoGroups.map((photos, index) => (
               <div
-                className='flex'
+                className={`flex ${
+                  photos.length === 1 ? "justify-center items-center" : ""
+                }`} // Center single photo in the middle
                 key={index}
               >
                 {photos.map((src, idx) => (

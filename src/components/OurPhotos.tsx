@@ -36,7 +36,7 @@ const OurPhotos = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: true, // Animation triggers only once
-    threshold: 0.5, // Trigger when 50% of the component is in view
+    threshold: 0.1, // Lower threshold to 10%
   });
 
   useEffect(() => {
@@ -92,7 +92,7 @@ const OurPhotos = () => {
               key={index}
               className='photo-item rounded-lg p-4'
               initial={{ opacity: 0, y: 30 }}
-              animate={controls}
+              animate={inView ? "visible" : controls} // Ensure visibility
               variants={{
                 visible: { opacity: 1, y: 0 },
               }}

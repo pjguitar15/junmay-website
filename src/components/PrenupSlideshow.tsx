@@ -1,20 +1,20 @@
 import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css"; // Import slideshow styles
-import { PrenupImages } from "../images/PrenupImages";
+import { PrenupImages } from "../images/ImageUrls";
 
 const PrenupSlideshow: React.FC = () => {
   return (
     <div className='bg-white py-16 md:py-28'>
       <div className='container mx-auto px-4 md:px-24'>
-        <div className='flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-14'>
-          <div className='relative overflow-hidden rounded-lg shadow-md w-full md:w-2/3'>
+        <div className='flex flex-col lg:flex-row items-start md:items-center gap-8 md:gap-3'>
+          <div className='relative overflow-hidden rounded-lg shadow-md w-full'>
             <div className='relative overflow-hidden aspect-w-16 aspect-h-9'>
               <Slide
                 autoplay={true}
                 pauseOnHover={true}
                 transitionDuration={500} // Transition duration in ms
-                duration={900} // Duration to display each slide in ms
+                duration={1000} // Duration to display each slide in ms
                 arrows={true}
                 canSwipe={true}
                 infinite={true} // Ensure the slideshow loops
@@ -34,7 +34,7 @@ const PrenupSlideshow: React.FC = () => {
               </Slide>
             </div>
           </div>
-          <div className='mt-8 md:mt-0 md:ml-8 text-center md:text-left'>
+          <div className='mt-8 md:mt-4 md:ml-8 text-center md:text-left'>
             <h2 className='text-3xl md:text-4xl font-alex-brush text-pink-800 mb-6'>
               Prenup Moments
             </h2>

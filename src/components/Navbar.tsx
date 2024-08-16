@@ -73,8 +73,8 @@ const Navbar = () => {
         >
           {[
             "Home",
-            "Photo Collection",
             "About",
+            "Photo Collection",
             "Bridesmaid & Groomsmen",
             "Essential Items",
           ].map((item, index) => (
@@ -121,8 +121,8 @@ const Navbar = () => {
           >
             {[
               "Home",
-              "Photo Collection",
               "About",
+              "Photo Collection",
               "Bridesmaid & Groomsmen",
               "Essential Items",
             ].map((item, index) => (

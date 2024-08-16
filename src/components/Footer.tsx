@@ -36,8 +36,8 @@ const Footer = () => {
         >
           {[
             { name: "Home" },
-            { name: "Photo Collection" },
             { name: "About", link: "#" },
+            { name: "Photo Collection" },
             { name: "Bridesmaid & Groomsmen" },
             { name: "Essential Items" },
           ].map((item, index) => (
