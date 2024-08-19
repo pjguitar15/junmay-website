@@ -1,5 +1,5 @@
 import React from "react";
-import { Slide } from "react-slideshow-image";
+import { Fade } from "react-slideshow-image"; // Import the Fade component
 import "react-slideshow-image/dist/styles.css"; // Import slideshow styles
 import { FAMILY_IMAGES } from "../images/ImageUrls";
 
@@ -35,8 +35,8 @@ const FamilySection: React.FC = () => {
             experience when we are with the ones we love the most.
           </p>
         </div>
-        <div className='w-full md:w-1/2 relative overflow-hidden rounded-lg shadow-md'>
-          <Slide
+        <div className='w-full md:w-1/2 relative overflow-hidden rounded-lg'>
+          <Fade
             autoplay={true}
             pauseOnHover={true}
             transitionDuration={800}
@@ -66,7 +66,7 @@ const FamilySection: React.FC = () => {
                 ))}
               </div>
             ))}
-          </Slide>
+          </Fade>
         </div>
       </div>
     </section>

@@ -1,7 +1,8 @@
 import React from "react";
-import { Slide } from "react-slideshow-image";
+import { Fade } from "react-slideshow-image"; // Import the Fade component
 import "react-slideshow-image/dist/styles.css"; // Import slideshow styles
 import { PrenupImages } from "../images/ImageUrls";
+import { SlArrowRight, SlArrowLeft } from "react-icons/sl"; // Import icons
 
 const PrenupSlideshow: React.FC = () => {
   return (
@@ -10,12 +11,22 @@ const PrenupSlideshow: React.FC = () => {
         <div className='flex flex-col lg:flex-row items-start md:items-center gap-8 md:gap-3'>
           <div className='relative overflow-hidden rounded-lg shadow-md w-full'>
             <div className='relative overflow-hidden aspect-w-16 aspect-h-9'>
-              <Slide
+              <Fade
                 autoplay={true}
                 pauseOnHover={true}
                 transitionDuration={500} // Transition duration in ms
                 duration={1000} // Duration to display each slide in ms
                 arrows={true}
+                prevArrow={
+                  <div className='custom-arrow left'>
+                    <SlArrowLeft />
+                  </div>
+                }
+                nextArrow={
+                  <div className='custom-arrow right'>
+                    <SlArrowRight />
+                  </div>
+                }
                 canSwipe={true}
                 infinite={true} // Ensure the slideshow loops
               >
@@ -27,11 +38,11 @@ const PrenupSlideshow: React.FC = () => {
                     <img
                       src={src}
                       alt={`Prenup ${index}`}
-                      className='slide-image'
+                      className='w-full h-auto object-cover'
                     />
                   </div>
                 ))}
-              </Slide>
+              </Fade>
             </div>
           </div>
           <div className='mt-8 md:mt-4 md:ml-8 text-center md:text-left'>

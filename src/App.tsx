@@ -31,9 +31,9 @@ const App: React.FC = () => {
                 <PrenupSlideshow />
                 <FamilySection />
                 <GroupPhotosSection />
-                <WeddingPreparation />
                 <TeamSection />
                 <WeddingVows />
+                <WeddingPreparation />
               </>
             }
           />

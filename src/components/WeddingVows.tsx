@@ -36,7 +36,7 @@ const WeddingVows = () => {
 
         {/* Groom's Vows */}
         <motion.div
-          className='p-8 rounded-lg mb-12 font-lora'
+          className='lg:p-8 rounded-lg mb-12 font-lora'
           initial='hidden'
           animate='visible'
           variants={fadeInUp}
@@ -45,7 +45,7 @@ const WeddingVows = () => {
           <h2 className='text-2xl md:text-3xl font-normal text-[#f1b4d0] mb-4'>
             Groom: Jun Young
           </h2>
-          <p className='text-white text-lg leading-relaxed mb-6'>
+          <p className='text-white text-md leading-relaxed mb-6'>
             To my beloved wife-to-be, May Chia, from the moment I met you, I
             knew my life would never be the same, because of how much pettiness
             I have to embrace. You are my best friend, my confidant, and my
@@ -53,13 +53,13 @@ const WeddingVows = () => {
             ones, to promise you my heart, my soul, and my unwavering
             commitment.
           </p>
-          <p className='text-white text-lg leading-relaxed mb-6'>
+          <p className='text-white text-md leading-relaxed mb-6'>
             I will stand by you in your successes and support you in your
             struggles and procrastinations. I promise to be your rock, offering
             strength and comfort in times of need, and to listen to you with
             patience and love, no matter what.
           </p>
-          <p className='text-white text-lg leading-relaxed mb-6'>
+          <p className='text-white text-md leading-relaxed mb-6'>
             I pledge to create a home filled with love, laughter, and
             understanding, where we can grow together, hand in hand, through all
             of life’s adventures. I promise to always share at least a bite of
@@ -67,26 +67,26 @@ const WeddingVows = () => {
             pour you a drink whenever we have meals together, ensuring you
             always feel cherished and taken care of.
           </p>
-          <p className='text-white text-lg leading-relaxed mb-6'>
+          <p className='text-white text-md leading-relaxed mb-6'>
             I will cherish our bond, nurture our relationship, and always strive
             to be the partner you deserve. And yes, dieting and exercising is
             difficult, but I promise to be the better version of myself for us.
             I will help you find joy even in the little things and to laugh with
             you every day.
           </p>
-          <p className='text-white text-lg leading-relaxed mb-6'>
+          <p className='text-white text-md leading-relaxed mb-6'>
             Even when we are completely broke, I will stand by your side, cook
             pancit for you, and find happiness in the simple moments we share.
             Together, we can overcome any obstacle and build a life full of love
             and memories.
           </p>
-          <p className='text-white text-lg leading-relaxed mb-6'>
+          <p className='text-white text-md leading-relaxed mb-6'>
             As we embark on this journey together, I promise to love you more
             each day, to honor and respect you, and to remain faithful and true
             to you for all the days of my life. You are my everything, and I am
             eternally grateful for the love we share.
           </p>
-          <p className='text-white text-lg leading-relaxed'>
+          <p className='text-white text-md leading-relaxed'>
             Today, I choose you, May Chia, now and forever, as my wife, my
             partner, and my one true love – and as the only person I want to
             lovingly share my life with.
@@ -95,7 +95,7 @@ const WeddingVows = () => {
 
         {/* Bride's Vows */}
         <motion.div
-          className='p-8 rounded-lg mb-12 font-lora'
+          className='lg:p-8 rounded-lg mb-12 font-lora'
           initial='hidden'
           animate='visible'
           variants={fadeInUp}
@@ -104,7 +104,7 @@ const WeddingVows = () => {
           <h2 className='text-2xl md:text-3xl font-normal text-[#f1b4d0] mb-4'>
             Bride: May
           </h2>
-          <p className='text-white text-lg leading-relaxed mb-6'>
+          <p className='text-white text-md leading-relaxed mb-6'>
             To my beloved husband-to-be, Jun Young Teves, from the moment I met
             you, I knew my life would never be the same, because of how many
             smelly farts I would have to tolerate and embrace. But still, you
@@ -112,32 +112,32 @@ const WeddingVows = () => {
             stand before you, surrounded by our loved ones, to promise you my
             heart, my soul, and my unwavering commitment.
           </p>
-          <p className='text-white text-lg leading-relaxed mb-6'>
+          <p className='text-white text-md leading-relaxed mb-6'>
             I will cheer you on in your successes and stand by you in your
             struggles. I promise to always be your listening ear, in both good
             times and bad. I vow to be your greatest burden, but also your
             greatest support. I also promise to gently encourage you to improve
             your fashion choices.
           </p>
-          <p className='text-white text-lg leading-relaxed mb-6'>
+          <p className='text-white text-md leading-relaxed mb-6'>
             I pledge to create a home filled with love, laughter, and
             understanding, where we can grow together, hand in hand, through all
             of life’s adventures. I will cherish our bond, nurture our
             relationship, and always strive to be the partner you deserve. And
             yes, I promise to always correct your bad spelling.
           </p>
-          <p className='text-white text-lg leading-relaxed mb-6'>
+          <p className='text-white text-md leading-relaxed mb-6'>
             Even when we are completely broke, I will stand by your side and eat
             pancit together instead of ordering GrabFood. Together, we can
             overcome any obstacle and find joy in the simple moments we share.
           </p>
-          <p className='text-white text-lg leading-relaxed mb-6'>
+          <p className='text-white text-md leading-relaxed mb-6'>
             As we embark on this journey together, I promise to love you more
             each day, to honor and respect you, and to remain faithful and true
             to you for all the days of my life. You are my everything, and I am
             eternally grateful for the love we share.
           </p>
-          <p className='text-white text-lg leading-relaxed'>
+          <p className='text-white text-md leading-relaxed'>
             Today, I choose you, Jun Young Teves, now and forever, as my
             husband, my partner, and my one true love – and as the only person I
             want to lovingly annoy for the rest of my life.

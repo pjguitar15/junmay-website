@@ -58,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({
       >
         {/* Close Button */}
         <button
-          className='absolute top-2 right-2 text-black text-3xl bg-white rounded-full p-2 hover:bg-gray-100'
+          className='absolute top-2 right-2 text-black text-3xl bg-white rounded-full p-2 w-10 h-10 flex items-center justify-center shadow-md hover:bg-gray-100'
           onClick={onClose}
         >
           &times;
@@ -66,13 +66,13 @@ const Modal: React.FC<ModalProps> = ({
 
         {/* Navigation Buttons */}
         <button
-          className='absolute left-0 top-1/2 transform -translate-y-1/2 text-pink-800 text-3xl p-2 bg-white rounded-full hover:bg-gray-100'
+          className='absolute left-0 top-1/2 transform -translate-y-1/2 text-pink-800 text-2xl p-2 w-10 h-10 me-4 flex items-center justify-center bg-white rounded-full shadow-md hover:bg-gray-100'
           onClick={onPrevious}
         >
           <SlArrowLeft />
         </button>
         <button
-          className='absolute right-0 top-1/2 transform -translate-y-1/2 text-pink-800 text-3xl p-2 bg-white rounded-full hover:bg-gray-100'
+          className='absolute right-0 top-1/2 transform -translate-y-1/2 text-pink-800 text-2xl p-2 w-10 h-10 me-4 flex items-center justify-center bg-white rounded-full shadow-md hover:bg-gray-100'
           onClick={onNext}
         >
           <SlArrowRight />

@@ -1,5 +1,5 @@
 import React from "react";
-import { Slide } from "react-slideshow-image";
+import { Fade } from "react-slideshow-image"; // Import the Fade component
 import "react-slideshow-image/dist/styles.css"; // Import slideshow styles
 import { GROUP_PHOTOS } from "../images/ImageUrls";
 
@@ -12,11 +12,11 @@ const GroupPhotosSection: React.FC = () => {
       <div className='container mx-auto px-4 flex flex-col md:flex-row items-center'>
         {/* Slider */}
         <div className='w-full md:w-1/2 mb-8 md:mb-0 md:pe-12'>
-          <Slide
+          <Fade
             autoplay={true}
             pauseOnHover={true}
             transitionDuration={800}
-            duration={3000}
+            duration={2000}
             arrows={true}
           >
             {groupPhotos.length > 0 ? (
@@ -41,7 +41,7 @@ const GroupPhotosSection: React.FC = () => {
             ) : (
               <p className='text-center text-gray-700'>No images available.</p>
             )}
-          </Slide>
+          </Fade>
         </div>
 
         {/* Text */}

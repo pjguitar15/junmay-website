@@ -119,15 +119,17 @@ const TeamSection: React.FC = () => {
               {group.map((member, idx) => (
                 <div
                   key={idx}
-                  className='text-center transform transition duration-300 hover:scale-105 font-lato'
+                  className='text-center transform transition duration-300 hover:scale-105'
                 >
                   <img
                     src={member.image}
                     alt={member.name}
                     className='w-full h-auto rounded-lg mb-4'
                   />
-                  <h3 className='text-lg font-semibold'>{member.name}</h3>
-                  <p className='text-gray-500'>{member.role}</p>
+                  <h3 className='text-lg font-semibold font-lora'>
+                    {member.name}
+                  </h3>
+                  <p className='text-gray-500 font-lato'>{member.role}</p>
                 </div>
               ))}
             </div>

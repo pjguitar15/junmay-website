@@ -1,23 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
 import { RxHamburgerMenu } from "react-icons/rx";
 import ringLogo from "../assets/wedding-ring.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // New state for scroll detection
+  const location = useLocation();
   const navigate = useNavigate();
 
+  // Toggle menu function
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  // Handle link click
   const handleLinkClick = (item: string) => {
     if (item === "Home") {
       navigate("/");
     } else {
-      // Scroll to the home section first
       navigate("/");
-      // Wait for navigation to complete
       setTimeout(() => {
         document
           .querySelector(`#${item.split(" ").join("-").toLowerCase()}`)
@@ -27,8 +29,31 @@ const Navbar = () => {
     setIsOpen(false); // Close the menu on link click
   };
 
+  // Scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50); // Adjust scroll position threshold as needed
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Check if current path is home
+  const isHomePage = location.pathname === "/";
+
   return (
-    <nav className='bg-white shadow-lg sticky top-0 z-50'>
+    <nav
+      className={`${
+        isHomePage ? "fixed top-0 left-0 right-0 z-50" : ""
+      } transition-colors duration-300 ${
+        isHomePage
+          ? isScrolled
+            ? "bg-white shadow-lg"
+            : "bg-transparent"
+          : "bg-white shadow-lg"
+      }`}
+    >
       <div className='container mx-auto px-4 py-4 flex justify-between items-center relative'>
         {/* Logo */}
         <ScrollLink
@@ -36,11 +61,13 @@ const Navbar = () => {
           smooth={true}
           duration={500}
           offset={-80} // Adjust based on your navbar height
-          className='hover:text-pink-800'
+          className='cursor-pointer'
         >
           <motion.div
             onClick={() => navigate("/")}
-            className='text-2xl font-bold text-pink-800 cursor-pointer'
+            className={`text-2xl font-bold cursor-pointer ${
+              isScrolled || !isHomePage ? "text-pink-800" : "text-white"
+            }`}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -59,14 +86,18 @@ const Navbar = () => {
         {/* Burger Menu Icon */}
         <div
           onClick={toggleMenu}
-          className={`flex items-center lg:hidden z-50 cursor-pointer`}
+          className={`flex items-center lg:hidden z-50 cursor-pointer ${
+            isScrolled || !isHomePage ? "text-pink-800" : "text-white"
+          }`}
         >
-          <RxHamburgerMenu className='text-pink-800 text-3xl' />
+          <RxHamburgerMenu className='text-3xl' />
         </div>
 
         {/* Navigation Links */}
         <motion.ul
-          className='hidden lg:flex gap-8 text-pink-600 font-lato'
+          className={`hidden lg:flex gap-2 font-lato ${
+            isScrolled || !isHomePage ? "text-pink-600" : "text-white"
+          }`}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -76,8 +107,8 @@ const Navbar = () => {
             "About",
             "Photo Collection",
             "Bridesmaid & Groomsmen",
-            "Essential Items",
-            "Wedding Vows", // New link added
+            "Wedding Vows",
+            "Essential Items", // Moved "Essential Items" to the end
           ].map((item, index) => (
             <motion.li
               key={index}
@@ -90,7 +121,12 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-80} // Adjust based on your navbar height
-                className='hover:text-pink-800'
+                activeClass='text-pink-600 underline' // Class to apply when active
+                className={`block px-4 py-2 transition-colors ${
+                  isScrolled || !isHomePage
+                    ? "text-pink-800 hover:text-pink-600"
+                    : "text-white hover:text-pink-400"
+                }`}
                 onClick={() => handleLinkClick(item)}
               >
                 {item}
@@ -115,7 +151,7 @@ const Navbar = () => {
             />
           </div>
           <motion.ul
-            className='flex flex-col text-pink-600 font-lato'
+            className='flex flex-col font-lato'
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -125,21 +161,26 @@ const Navbar = () => {
               "About",
               "Photo Collection",
               "Bridesmaid & Groomsmen",
-              "Essential Items",
-              "Wedding Vows", // New link added
+              "Wedding Vows",
+              "Essential Items", // Moved "Essential Items" to the end
             ].map((item, index) => (
               <motion.li
                 key={index}
                 whileHover={{ scale: 1.1, color: "#DB2777" }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className='border-b last:border-b-0 text-black cursor-pointer'
+                className='border-b last:border-b-0 cursor-pointer'
               >
                 <ScrollLink
                   to={item.split(" ").join("-").toLowerCase()}
                   smooth={true}
                   duration={500}
                   offset={-80} // Adjust based on your navbar height
-                  className='block px-4 py-2'
+                  activeClass='text-pink-600 underline' // Class to apply when active
+                  className={`block px-4 py-2 ${
+                    isScrolled || !isHomePage
+                      ? "text-black hover:text-gray-800"
+                      : "text-black hover:text-gray-600"
+                  }`}
                   onClick={() => handleLinkClick(item)} // Close menu on item click
                 >
                   {item}

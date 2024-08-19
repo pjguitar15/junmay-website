@@ -3,7 +3,7 @@ import React from "react";
 const VideoSection: React.FC = () => {
   return (
     <section
-      className='bg-gray-900 p-8 flex flex-col items-center'
+      className='bg-gray-900 flex flex-col items-center pt-8'
       id='video-section'
     >
       <div className='text-center mb-8'>
@@ -40,7 +40,7 @@ const VideoSection: React.FC = () => {
             <h3 className='text-white text-3xl md:text-4xl font-bold mb-2 font-alex-brush'>
               Same Day Edit
             </h3>
-            <p className='text-white text-lg md:text-sm '>
+            <p className='text-white text-md'>
               A beautiful capture of our wedding day, edited on the same day.
             </p>
           </div>

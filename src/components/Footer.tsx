@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link as ScrollLink } from "react-scroll";
 import ringLogo from "../assets/wedding-ring.svg";
 
 const Footer = () => {
@@ -29,36 +30,40 @@ const Footer = () => {
 
         {/* Footer Navigation Links */}
         <motion.ul
-          className='flex flex-col lg:flex-row xl:gap-9 justify-end text-pink-600 font-lato mt-6 md:mt-0 text-center md:text-right'
+          className='flex flex-col lg:flex-row xl:gap-9 justify-end text-pink-600 font-lato mt-6 md:mt-0 text-center md:text-right whitespace-nowrap'
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           {[
-            { name: "Home" },
-            { name: "About", link: "#" },
-            { name: "Photo Collection" },
-            { name: "Bridesmaid & Groomsmen" },
-            { name: "Essential Items" },
-            { name: "Wedding Vows" }, // New link added
+            "Home",
+            "About",
+            "Photo Collection",
+            "Bridesmaid & Groomsmen",
+            "Essential Items",
+            "Wedding Vows",
           ].map((item, index) => (
             <motion.li
               key={index}
               whileHover={{ scale: 1.1, color: "#DB2777" }} // scale on hover with pink color
               transition={{ type: "spring", stiffness: 300 }}
-              className='text-center'
+              className='text-center cursor-pointer'
             >
-              <a
-                href={`#${item.name.split(" ").join("-").toLowerCase()}`}
+              <ScrollLink
+                to={item.split(" ").join("-").toLowerCase()}
+                smooth={true}
+                duration={500}
+                offset={-80} // Adjust based on your navbar height
                 className='hover:text-pink-800 transition duration-300 ease-in-out'
+                activeClass='text-pink-600 underline' // Apply this class when active
               >
-                {item.name}
-              </a>
+                {item}
+              </ScrollLink>
             </motion.li>
           ))}
         </motion.ul>
 
-        {/* Footer Legal Links */}
+        {/* Footer Legal Links (Commented Out) */}
         {/* <motion.ul
           className='flex flex-col md:space-x-6 text-pink-600 font-lato mt-6 md:mt-0 text-center md:text-right'
           initial={{ opacity: 0, y: 20 }}

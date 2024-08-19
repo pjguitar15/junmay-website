@@ -52,7 +52,7 @@ const WeddingPreparation = () => {
       >
         Essential Items for Your Big Day
       </motion.h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 md:w-3/4 lg:w-5/8 mx-auto font-lato'>
+      <div className='grid grid-cols-1 md:grid-cols-2 md:w-3/4 lg:w-5/8 mx-auto'>
         <motion.div
           className='item rounded-lg p-4 flex flex-col items-center'
           initial={{ opacity: 0, y: 20 }}
@@ -64,8 +64,10 @@ const WeddingPreparation = () => {
             alt='Wedding Gown'
             className='w-full rounded-lg mb-4'
           />
-          <h3 className='text-xl font-bold text-gray-800 mb-2'>Wedding Gown</h3>
-          <p className='text-gray-600'>
+          <h3 className='text-xl font-bold text-gray-800 mb-2 font-lora'>
+            Wedding Gown
+          </h3>
+          <p className='text-gray-600 font-lato'>
             Stunning gowns tailored to make you look your best on your special
             day.
           </p>
@@ -81,8 +83,10 @@ const WeddingPreparation = () => {
             alt='Groom Suit'
             className='w-full rounded-lg mb-4'
           />
-          <h3 className='text-xl font-bold text-gray-800 mb-2'>Groom's Suit</h3>
-          <p className='text-gray-600'>
+          <h3 className='text-xl font-bold text-gray-800 mb-2 font-lora'>
+            Groom's Suit
+          </h3>
+          <p className='text-gray-600 font-lato'>
             Elegant suits that ensure the groom looks sharp and stylish.
           </p>
         </motion.div>

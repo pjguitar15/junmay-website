@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import pinkFlowers from "../assets/pink-flowers.png";
 const AboutUs = () => {
   return (
     <div
@@ -14,8 +16,17 @@ const AboutUs = () => {
             />
           </div>
           <div className='md:w-1/2 p-12 text-center md:text-left'>
-            <h2 className='text-5xl font-bold text-gray-800 font-alex-brush'>
-              Celebrate the union of Jun and May Teves
+            <motion.img
+              src={pinkFlowers}
+              alt='Pink Flowers'
+              className='w-3/6 md:w-2/6 lg:w-40 xl:w-48 mb-3 mx-auto md:mx-0'
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+            />
+            <h2 className='text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-gray-800 font-alex-brush tracking-wider'>
+              Celebrate the union of Jun <br />
+              and May Teves
             </h2>
             <p className='text-pink-600 text-lg font-lato mt-1'>
               Where Two Cultures Become One, in Love and Harmony

@@ -2,13 +2,14 @@ import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
+import { FiEye } from "react-icons/fi";
 
 const photoItems = [
   {
     title: "Entrance of entourage",
     description: "Elegant portraits capturing the essence of each individual.",
     imgUrl:
-      "https://res.cloudinary.com/dbibwzs6c/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1724053433/mayjune/portraits/MRV00318_qnvlkv.jpg", // Updated with ar_16:9
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1724053433/mayjune/portraits/MRV00318_qnvlkv.jpg",
   },
   {
     title: "Candid",
@@ -90,7 +91,7 @@ const OurPhotos = () => {
           {photoItems.map((item, index) => (
             <motion.div
               key={index}
-              className='photo-item rounded-lg p-4'
+              className='photo-item rounded-lg p-4 relative group cursor-pointer'
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? "visible" : controls}
               variants={{
@@ -98,15 +99,29 @@ const OurPhotos = () => {
               }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <img
-                src={item.imgUrl}
-                alt={item.title}
-                className='mx-auto mb-4 rounded-lg object-cover'
-              />
-              <h3 className='text-xl font-bold text-gray-800 mb-2'>
+              <a
+                onClick={() =>
+                  navigate(
+                    `/gallery/${item.title.toLowerCase().replace(/ /g, "-")}`
+                  )
+                }
+                className='block relative'
+              >
+                <motion.img
+                  src={item.imgUrl}
+                  alt={item.title}
+                  className='mx-auto mb-4 rounded-lg object-cover transition duration-300 ease-in-out group-hover:brightness-50 cursor-pointer'
+                />
+                <div className='absolute inset-0 flex items-center justify-center w-full h-full'>
+                  <FiEye className='text-white text-4xl opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
+                </div>
+              </a>
+              <h3 className='text-xl font-bold text-gray-800 mb-2 font-lora'>
                 {item.title}
               </h3>
-              <p className='text-gray-600 mb-4'>{item.description}</p>
+              <p className='text-gray-600 mb-4 w-full lg:w-3/4 mx-auto'>
+                {item.description}
+              </p>
               <button
                 onClick={() =>
                   navigate(
