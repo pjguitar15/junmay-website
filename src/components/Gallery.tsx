@@ -1,3 +1,4 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -5,8 +6,11 @@ import Modal from "./Modal"; // Import the Modal component
 import {
   CANDID_IMAGES,
   CEREMONY_IMAGES,
-  ENTRANCE_OF_ENTOURAGE_IMAGES, // Updated variable name
+  ENTRANCE_OF_ENTOURAGE_IMAGES,
   RECEPTION_IMAGES,
+  GROOM_PREP,
+  BRIDE_PREP,
+  PRE_WEDDING_MOMENTS, // Added Pre-Wedding Moments
 } from "../images/ImageUrls";
 
 const Gallery: React.FC = () => {
@@ -15,12 +19,15 @@ const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  // Mock image data for different categories
+  // Updated image data with new categories
   const galleries: { [key: string]: string[] } = {
     candid: CANDID_IMAGES,
     ceremony: CEREMONY_IMAGES,
     reception: RECEPTION_IMAGES,
-    "entrance-of-entourage": ENTRANCE_OF_ENTOURAGE_IMAGES, // Updated category name
+    "entrance-of-entourage": ENTRANCE_OF_ENTOURAGE_IMAGES,
+    "bridal-preparation": BRIDE_PREP, // Added Bridal Preparation
+    "groom-preparation": GROOM_PREP, // Added Groom Preparation
+    "pre-wedding-moments": PRE_WEDDING_MOMENTS, // Added Pre-Wedding Moments
   };
 
   const galleryImages = galleries[category || ""] || [];
@@ -100,8 +107,6 @@ const Gallery: React.FC = () => {
               </p>
             )}
           </div>
-
-          {/* Explore Other Galleries */}
         </div>
 
         <Modal
@@ -112,6 +117,8 @@ const Gallery: React.FC = () => {
           onPrevious={handlePrevious}
         />
       </div>
+
+      {/* Explore Other Galleries */}
       <section className='px-4 py-16 text-center bg-slate-50'>
         <div className='container mx-auto'>
           <motion.h2

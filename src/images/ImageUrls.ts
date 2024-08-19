@@ -1,6 +1,6 @@
 // compress
-const COMP = `q_auto,w_800`;
-const baseUrl = `https://res.cloudinary.com/dbibwzs6c/image/upload/`;
+export const COMP = `q_auto,w_800`;
+export const baseUrl = `https://res.cloudinary.com/dbibwzs6c/image/upload/`;
 
 // https://res.cloudinary.com/dbibwzs6c/image/upload/q_auto,w_800
 
@@ -221,4 +221,63 @@ export const GROUP_PHOTOS = [
   `${baseUrl + COMP}/v1724048334/mayjune/group%20photos/MRV00546_scvgy6.jpg`,
   `${baseUrl + COMP}/v1724048334/mayjune/group%20photos/MRV00556_utnmip.jpg`,
   `${baseUrl + COMP}/v1724048335/mayjune/group%20photos/MRV00541_lcq5bv.jpg`,
+];
+
+export const GROOM_PREP = [
+  `${baseUrl + COMP}/v1724071809/mayjune/groom%20prep/MRV09967_z8ih2q.jpg`,
+  `${baseUrl + COMP}/v1724071807/mayjune/groom%20prep/MRV09733_jwcawu.jpg`,
+  `${baseUrl + COMP}/v1724071802/mayjune/groom%20prep/MRV09684_qufl13.jpg`,
+  `${baseUrl + COMP}/v1724071483/mayjune/groom%20prep/MRV09715_wukd8f.jpg`,
+  `${baseUrl + COMP}/v1724071449/mayjune/groom%20prep/MRV09829_yfr9ou.jpg`,
+  `${baseUrl + COMP}/v1724071432/mayjune/groom%20prep/MRV09864_czhnle.jpg`,
+  `${baseUrl + COMP}/v1724071431/mayjune/groom%20prep/MRV09754_ozwjjl.jpg`,
+  `${baseUrl + COMP}/v1724071431/mayjune/groom%20prep/MRV09696_cpodf9.jpg`,
+  `${baseUrl + COMP}/v1724071430/mayjune/groom%20prep/MRV09883_ptg8bl.jpg`,
+  `${baseUrl + COMP}/v1724071430/mayjune/groom%20prep/MRV09743_rbzh7h.jpg`,
+];
+
+export const BRIDE_PREP = [
+  `${baseUrl + COMP}/v1724071406/mayjune/bride%20prep/MRV09397_jf5tvk.jpg`,
+  `${baseUrl + COMP}/v1724071405/mayjune/bride%20prep/MRV09311_dfo1gc.jpg`,
+  `${baseUrl + COMP}/v1724071405/mayjune/bride%20prep/MRV09527_ycglv1.jpg`,
+  `${baseUrl + COMP}/v1724071404/mayjune/bride%20prep/MRV09550_hxlnmh.jpg`,
+  `${baseUrl + COMP}/v1724071403/mayjune/bride%20prep/MRV09568_gznonq.jpg`,
+  `${baseUrl + COMP}/v1724071403/mayjune/bride%20prep/MRV09619_rip6as.jpg`,
+  `${baseUrl + COMP}/v1724071403/mayjune/bride%20prep/MRV09629_stzrv7.jpg`,
+  `${baseUrl + COMP}/v1724070975/mayjune/bride%20prep/MRV09279_jwz2fg.jpg`,
+  `${baseUrl + COMP}/v1724070637/mayjune/bride%20prep/MRV09287_p2ynk3.jpg`,
+  `${baseUrl + COMP}/v1724070617/mayjune/bride%20prep/MRV09408_wtyupi.jpg`,
+];
+
+export const PRE_WEDDING_MOMENTS = [
+  `${
+    baseUrl + COMP
+  }/v1724075567/mayjune/pre-wedding%20moments/MRV09883_nq5fkq.jpg`,
+  `${
+    baseUrl + COMP
+  }/v1724075559/mayjune/pre-wedding%20moments/MRV09967_zgqvai.jpg`,
+  `${
+    baseUrl + COMP
+  }/v1724075558/mayjune/pre-wedding%20moments/_ACP5887_itvels.jpg`,
+  `${
+    baseUrl + COMP
+  }/v1724075558/mayjune/pre-wedding%20moments/_ACP5850_ue6e8f.jpg`,
+  `${
+    baseUrl + COMP
+  }/v1724075557/mayjune/pre-wedding%20moments/_ACP5730_fpp1of.jpg`,
+  `${
+    baseUrl + COMP
+  }/v1724075556/mayjune/pre-wedding%20moments/_ACP5814_oalf8w.jpg`,
+  `${
+    baseUrl + COMP
+  }/v1724075556/mayjune/pre-wedding%20moments/_ACP5976_dttdmf.jpg`,
+  `${
+    baseUrl + COMP
+  }/v1724075554/mayjune/pre-wedding%20moments/_ACP5715_cj5frf.jpg`,
+  `${
+    baseUrl + COMP
+  }/v1724075543/mayjune/pre-wedding%20moments/_ACP6001_vf8off.jpg`,
+  `${
+    baseUrl + COMP
+  }/v1724076656/mayjune/pre-wedding%20moments/_ACP5943_tqf9jw.jpg`,
 ];
