@@ -11,6 +11,8 @@ import Gallery from "./components/Gallery";
 import VideoSection from "./components/VideoSection";
 import PrenupSlideshow from "./components/PrenupSlideshow";
 import FamilySection from "./components/FamilySection";
+import GroupPhotosSection from "./components/GroupPhotosSection";
+import WeddingVows from "./components/WeddingVows";
 
 const App: React.FC = () => {
   return (
@@ -28,8 +30,10 @@ const App: React.FC = () => {
                 <VideoSection />
                 <PrenupSlideshow />
                 <FamilySection />
-                <TeamSection />
+                <GroupPhotosSection />
                 <WeddingPreparation />
+                <TeamSection />
+                <WeddingVows />
               </>
             }
           />

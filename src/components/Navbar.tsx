@@ -77,6 +77,7 @@ const Navbar = () => {
             "Photo Collection",
             "Bridesmaid & Groomsmen",
             "Essential Items",
+            "Wedding Vows", // New link added
           ].map((item, index) => (
             <motion.li
               key={index}
@@ -125,6 +126,7 @@ const Navbar = () => {
               "Photo Collection",
               "Bridesmaid & Groomsmen",
               "Essential Items",
+              "Wedding Vows", // New link added
             ].map((item, index) => (
               <motion.li
                 key={index}

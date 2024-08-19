@@ -2,6 +2,8 @@
 const COMP = `q_auto,w_800`;
 const baseUrl = `https://res.cloudinary.com/dbibwzs6c/image/upload/`;
 
+// https://res.cloudinary.com/dbibwzs6c/image/upload/q_auto,w_800
+
 export const PrenupImages = [
   `${baseUrl + COMP}/v1723788681/mayjune/real%20prenup/_ACP0021_cxgra2.jpg`,
   `${baseUrl + COMP}/v1723788681/mayjune/real%20prenup/_ACP0282_hpingu.jpg`,
@@ -74,7 +76,7 @@ export const PrenupImages = [
   `${baseUrl + COMP}/v1723788587/mayjune/real%20prenup/_ACP0413_vjy1jy.jpg`,
 ];
 
-export const PORTRAIT_IMAGES = [
+export const ENTRANCE_OF_ENTOURAGE_IMAGES = [
   `${baseUrl + COMP}/v1723793624/mayjune/portraits/_ACP6065_vco4ne.jpg`,
   `${baseUrl + COMP}/v1723793623/mayjune/portraits/MRV00160_pqvzqx.jpg`,
   `${baseUrl + COMP}/v1723793623/mayjune/portraits/_ACP6091_kozafe.jpg`,
@@ -84,11 +86,18 @@ export const PORTRAIT_IMAGES = [
   `${baseUrl + COMP}/v1723793623/mayjune/portraits/MRV00181_vly2tz.jpg`,
   `${baseUrl + COMP}/v1723793622/mayjune/portraits/MRV00212_r8xiiu.jpg`,
   `${baseUrl + COMP}/v1723793622/mayjune/portraits/MRV00260_ovp3js.jpg`,
-  `${baseUrl + COMP}/v1723793621/mayjune/portraits/MRV00981_e5odu0.jpg`,
   `${baseUrl + COMP}/v1723793622/mayjune/portraits/MRV00289_wp00po.jpg`,
   `${baseUrl + COMP}/v1723793621/mayjune/portraits/MRV00269_r17lp8.jpg`,
-  `${baseUrl + COMP}/v1723793621/mayjune/portraits/MRV00940_uehn5o.jpg`,
-  `${baseUrl + COMP}/v1723517838/mayjune/portraits/_ACP6199_lvmtzf.jpg`,
+  `${baseUrl + COMP}/v1724053431/mayjune/portraits/MRV00305_1_xnmieq.jpg`,
+  `${baseUrl + COMP}/v1724053431/mayjune/portraits/MRV00238_1_qk89jt.jpg`,
+  `${baseUrl + COMP}/v1724053432/mayjune/portraits/MRV00202_1_jdkq8z.jpg`,
+  `${baseUrl + COMP}/v1724053432/mayjune/portraits/MRV00230_1_rahds9.jpg`,
+  `${baseUrl + COMP}/v1724053432/mayjune/portraits/MRV00140_hjkb30.jpg`,
+  `${baseUrl + COMP}/v1724053432/mayjune/portraits/MRV00219_2_qsrsgv.jpg`,
+  `${baseUrl + COMP}/v1724053432/mayjune/portraits/MRV00173_1_sjowag.jpg`,
+  `${baseUrl + COMP}/v1724053433/mayjune/portraits/MRV00318_qnvlkv.jpg`,
+  `${baseUrl + COMP}/v1724053433/mayjune/portraits/MRV00245_1_mqjxmx.jpg`,
+  `${baseUrl + COMP}/v1724053433/mayjune/portraits/MRV00276_1_qiirpb.jpg`,
 ];
 
 export const CANDID_IMAGES = [
@@ -106,6 +115,13 @@ export const CANDID_IMAGES = [
   `${baseUrl + COMP}/v1723816098/mayjune/candid/_ACP5821_s6zpvr.jpg`,
   `${baseUrl + COMP}/v1723816098/mayjune/candid/_ACP5884_roek20.jpg`,
   `${baseUrl + COMP}/v1723816097/mayjune/candid/MRV09552_gzqp4o.jpg`,
+  `${baseUrl + COMP}/v1724054891/mayjune/candid/MRV00698_txsibo.jpg`,
+  `${baseUrl + COMP}/v1724054892/mayjune/candid/MRV00124_slj6un.jpg`,
+  `${baseUrl + COMP}/v1724054892/mayjune/candid/_ACP6049_ggrjnk.jpg`,
+  `${baseUrl + COMP}/v1724054892/mayjune/candid/MRV00118_f1gf3o.jpg`,
+  `${baseUrl + COMP}/v1724054893/mayjune/candid/_ACP6044_jl8nbw.jpg`,
+  `${baseUrl + COMP}/v1724054897/mayjune/candid/MRV00388_x6fmoo.jpg`,
+  `${baseUrl + COMP}/v1724054897/mayjune/candid/MRV00125_dmxdbx.jpg`,
 ];
 
 export const CEREMONY_IMAGES = [
@@ -129,6 +145,11 @@ export const CEREMONY_IMAGES = [
   `${baseUrl + COMP}/v1723820124/mayjune/ceremony/_ACP6180_kbp7wv.jpg`,
   `${baseUrl + COMP}/v1723820124/mayjune/ceremony/_ACP6167_vw0r2k.jpg`,
   `${baseUrl + COMP}/v1723820124/mayjune/ceremony/_ACP6182_a5c0sn.jpg`,
+  `${baseUrl + COMP}/v1724054466/mayjune/ceremony/MRV00411_weehax.jpg`,
+  `${baseUrl + COMP}/v1724054466/mayjune/ceremony/MRV00518_mvpvxo.jpg`,
+  `${baseUrl + COMP}/v1724054467/mayjune/ceremony/MRV00473_tugua9.jpg`,
+  `${baseUrl + COMP}/v1724054472/mayjune/ceremony/MRV00461_tfhtba.jpg`,
+  `${baseUrl + COMP}/v1724054500/mayjune/ceremony/MRV00462_hazut3.jpg`,
 ];
 
 export const RECEPTION_IMAGES = [
@@ -157,6 +178,19 @@ export const RECEPTION_IMAGES = [
   `${baseUrl + COMP}/v1723820701/mayjune/reception/_ACP6257_fdt8wk.jpg`,
   `${baseUrl + COMP}/v1723820664/mayjune/reception/_ACP6263_sbyv7n.jpg`,
   `${baseUrl + COMP}/v1723820664/mayjune/reception/_ACP6259_d1mnf2.jpg`,
+  `${baseUrl + COMP}/v1724050015/mayjune/reception/MRV00925_nsdg7u.jpg`,
+  `${baseUrl + COMP}/v1724050016/mayjune/reception/_ACP6164_1_ocswrq.jpg`,
+  `${baseUrl + COMP}/v1724050019/mayjune/reception/_ACP6095_cqpkhj.jpg`,
+  `${baseUrl + COMP}/v1724050019/mayjune/reception/MRV00852_acbdv2.png`,
+  `${baseUrl + COMP}/v1724050019/mayjune/reception/MRV00866_yef1nb.png`,
+  `${baseUrl + COMP}/v1724050019/mayjune/reception/MRV00842_unjvu5.png`,
+  `${baseUrl + COMP}/v1724050021/mayjune/reception/MRV00870_t1rvya.png`,
+  `${baseUrl + COMP}/v1724050807/mayjune/reception/MRV00875_1_rueawl.png`,
+  `${baseUrl + COMP}/v1724050394/mayjune/reception/MRV00838_xdusp6.png`,
+  `${baseUrl + COMP}/v1724050396/mayjune/reception/MRV00826_vo5i2c.png`,
+  `${baseUrl + COMP}/v1724050396/mayjune/reception/MRV00823_ylork3.png`,
+  `${baseUrl + COMP}/v1724050694/mayjune/reception/MRV00832_zp2tcq.png`,
+  `${baseUrl + COMP}/v1724050694/mayjune/reception/MRV00830_neclnw.png`,
 ];
 
 export const FAMILY_IMAGES = [
@@ -167,4 +201,24 @@ export const FAMILY_IMAGES = [
   `${baseUrl + COMP}/v1723821956/mayjune/family/MRV00523_lnlhuj.jpg`,
   `${baseUrl + COMP}/v1723821877/mayjune/family/MRV00511_p50sor.jpg`,
   `${baseUrl + COMP}/v1723821965/mayjune/family/_ACP6213_uzssyf.jpg`,
+];
+
+export const GROUP_PHOTOS = [
+  `${baseUrl + COMP}/v1724040353/mayjune/group%20photos/MRV00722_mfsfe8.jpg`,
+  `${baseUrl + COMP}/v1724040352/mayjune/group%20photos/MRV00779_wtnrsk.jpg`,
+  `${baseUrl + COMP}/v1724040351/mayjune/group%20photos/MRV00712_fpvwy2.jpg`,
+  `${baseUrl + COMP}/v1724040351/mayjune/group%20photos/MRV00728_nw1ad0.jpg`,
+  `${baseUrl + COMP}/v1724040350/mayjune/group%20photos/MRV00734_yffbht.jpg`,
+  `${baseUrl + COMP}/v1724040350/mayjune/group%20photos/MRV00742_knghr6.jpg`,
+  `${baseUrl + COMP}/v1724040350/mayjune/group%20photos/MRV00737_owsamr.jpg`,
+  `${baseUrl + COMP}/v1724040350/mayjune/group%20photos/MRV00746_vuq7of.jpg`,
+  `${baseUrl + COMP}/v1724040349/mayjune/group%20photos/tasd_dp1wcp.jpg`,
+  `${baseUrl + COMP}/v1724040348/mayjune/group%20photos/MRV00758_g43dif.jpg`,
+  `${baseUrl + COMP}/v1724040243/mayjune/group%20photos/MRV00755_tjg1sh.jpg`,
+  `${baseUrl + COMP}/v1724040223/mayjune/group%20photos/MRV00767_qi32wy.jpg`,
+  `${baseUrl + COMP}/v1724048334/mayjune/group%20photos/MRV00531_yaraia.jpg`,
+  `${baseUrl + COMP}/v1724048333/mayjune/group%20photos/MRV00565_xszbrl.jpg`,
+  `${baseUrl + COMP}/v1724048334/mayjune/group%20photos/MRV00546_scvgy6.jpg`,
+  `${baseUrl + COMP}/v1724048334/mayjune/group%20photos/MRV00556_utnmip.jpg`,
+  `${baseUrl + COMP}/v1724048335/mayjune/group%20photos/MRV00541_lcq5bv.jpg`,
 ];

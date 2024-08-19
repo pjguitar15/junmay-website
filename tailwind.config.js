@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         'alex-brush': ['Alex Brush', 'cursive'],
         'lato': ['Lato', 'sans serif'],
+        'lora': ['Lora', 'serif'],
       },
     },
   },

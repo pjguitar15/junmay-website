@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 const photoItems = [
   {
-    title: "Portraits",
+    title: "Entrance of entourage",
     description: "Elegant portraits capturing the essence of each individual.",
     imgUrl:
-      "https://res.cloudinary.com/dbibwzs6c/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1723517838/mayjune/portraits/_ACP6199_lvmtzf.jpg",
+      "https://res.cloudinary.com/dbibwzs6c/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1724053433/mayjune/portraits/MRV00318_qnvlkv.jpg", // Updated with ar_16:9
   },
   {
     title: "Candid",
@@ -35,8 +35,8 @@ const OurPhotos = () => {
   const navigate = useNavigate();
   const controls = useAnimation();
   const { ref, inView } = useInView({
-    triggerOnce: true, // Animation triggers only once
-    threshold: 0.1, // Lower threshold to 10%
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
   useEffect(() => {
@@ -92,7 +92,7 @@ const OurPhotos = () => {
               key={index}
               className='photo-item rounded-lg p-4'
               initial={{ opacity: 0, y: 30 }}
-              animate={inView ? "visible" : controls} // Ensure visibility
+              animate={inView ? "visible" : controls}
               variants={{
                 visible: { opacity: 1, y: 0 },
               }}
@@ -101,14 +101,18 @@ const OurPhotos = () => {
               <img
                 src={item.imgUrl}
                 alt={item.title}
-                className='mx-auto mb-4 rounded-lg'
+                className='mx-auto mb-4 rounded-lg object-cover'
               />
               <h3 className='text-xl font-bold text-gray-800 mb-2'>
                 {item.title}
               </h3>
               <p className='text-gray-600 mb-4'>{item.description}</p>
               <button
-                onClick={() => navigate(`/gallery/${item.title.toLowerCase()}`)}
+                onClick={() =>
+                  navigate(
+                    `/gallery/${item.title.toLowerCase().replace(/ /g, "-")}`
+                  )
+                }
                 className='text-pink-600 hover:text-pink-800 font-semibold'
               >
                 View Gallery

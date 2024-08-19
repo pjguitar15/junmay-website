@@ -40,6 +40,7 @@ const Footer = () => {
             { name: "Photo Collection" },
             { name: "Bridesmaid & Groomsmen" },
             { name: "Essential Items" },
+            { name: "Wedding Vows" }, // New link added
           ].map((item, index) => (
             <motion.li
               key={index}

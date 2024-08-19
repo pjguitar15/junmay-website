@@ -5,7 +5,7 @@ import Modal from "./Modal"; // Import the Modal component
 import {
   CANDID_IMAGES,
   CEREMONY_IMAGES,
-  PORTRAIT_IMAGES,
+  ENTRANCE_OF_ENTOURAGE_IMAGES, // Updated variable name
   RECEPTION_IMAGES,
 } from "../images/ImageUrls";
 
@@ -20,7 +20,7 @@ const Gallery: React.FC = () => {
     candid: CANDID_IMAGES,
     ceremony: CEREMONY_IMAGES,
     reception: RECEPTION_IMAGES,
-    portraits: PORTRAIT_IMAGES,
+    "entrance-of-entourage": ENTRANCE_OF_ENTOURAGE_IMAGES, // Updated category name
   };
 
   const galleryImages = galleries[category || ""] || [];
@@ -62,7 +62,9 @@ const Gallery: React.FC = () => {
       <div className='container mx-auto px-4'>
         <h2 className='text-3xl font-alex-brush text-pink-800 text-center mb-8'>
           {category
-            ? `${category.charAt(0).toUpperCase() + category.slice(1)} Gallery`
+            ? `${category
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, (char) => char.toUpperCase())} Gallery`
             : "Gallery"}
         </h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
